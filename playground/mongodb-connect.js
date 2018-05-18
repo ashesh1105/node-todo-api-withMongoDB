@@ -16,29 +16,29 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
 
   const db = client.db('TodoApp');
 
-  // db.collection('Todos').insertOne({
-  //   text: 'Something to do',
-  //   completed: false
-  // }, (err, result) => {
-  //   if(err) {
-  //     return console.log('Unable to insert into MongoDB -> Todos collection.');
-  //   } else {
-  // // <results>.ops gives an array of all the fields that got inserted
-  //     console.log(JSON.stringify(result.ops), undefined, 2);
-  //   }
-  // });
+  db.collection('Todos').insertOne({
+    text: 'Something to do',
+    completed: false
+  }, (err, result) => {
+    if(err) {
+      return console.log('Unable to insert into MongoDB -> Todos collection.');
+    } else {
+  // <results>.ops gives an array of all the fields that got inserted
+      console.log(JSON.stringify(result.ops), undefined, 2);
+    }
+  });
 
-  // db.collection('Users').insertOne({
-  //   name: 'Virender',
-  //   age: 45,
-  //   location: 'Goel'
-  // }, (err, result) => {
-  //   if (err) {
-  //     return console.log('Could not insert to MongoDB -> Users collection');
-  //   } else {
-  //     console.log(JSON.stringify(result.ops), undefined, 2);
-  //   }
-  // });
+  db.collection('Users').insertOne({
+    name: 'Virender',
+    age: 45,
+    location: 'Goel'
+  }, (err, result) => {
+    if (err) {
+      return console.log('Could not insert to MongoDB -> Users collection');
+    } else {
+      console.log(JSON.stringify(result.ops), undefined, 2);
+    }
+  });
 
   client.close();
 });

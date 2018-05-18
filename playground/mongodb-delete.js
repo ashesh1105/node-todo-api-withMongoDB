@@ -9,29 +9,29 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
 
   const db = client.db('TodoApp');
 
-  // // deleteMany
-  // db.collection('Todos').deleteMany({text: 'Eat lunch'})
-  //   .then((result) => {
-  //     console.log(result);
-  //   }, (err) => {
-  //     console.log(`There was an error deleting documents. Error: ${err}`);
-  //   });
+  // deleteMany
+  db.collection('Todos').deleteMany({text: 'Eat lunch'})
+    .then((result) => {
+      console.log(result);
+    }, (err) => {
+      console.log(`There was an error deleting documents. Error: ${err}`);
+    });
 
-  // // deleteOne
-  // db.collection('Todos').deleteOne({text: 'Eat lunch'})
-  //   .then((result) => {
-  //     console.log(result);
-  //   }, (err) => {
-  //     console.log(`There was an error deleting document. Error: ${err}`);
-  //   });
+  // deleteOne
+  db.collection('Todos').deleteOne({text: 'Eat lunch'})
+    .then((result) => {
+      console.log(result);
+    }, (err) => {
+      console.log(`There was an error deleting document. Error: ${err}`);
+    });
 
-  // // findOneAndDelete
-  // db.collection('Todos').findOneAndDelete({completed: false})
-  //   .then((result) => {
-  //     console.log(result);
-  //   }, (err) => {
-  //     console.log(`There was an error finding one and deleting the document. Error: ${err}`);
-  //   });
+  // findOneAndDelete
+  db.collection('Todos').findOneAndDelete({completed: false})
+    .then((result) => {
+      console.log(result);
+    }, (err) => {
+      console.log(`There was an error finding one and deleting the document. Error: ${err}`);
+    });
 
-  // client.close();
+  client.close();
 });
